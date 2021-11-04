@@ -38,5 +38,4 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
     implementation group: 'io.gleap', name: 'gleap-android-sdk', version: '6.0.56'
     implementation "com.squareup.okhttp3:okhttp:4.9.0"
-
 }

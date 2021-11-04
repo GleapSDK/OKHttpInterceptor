@@ -1,10 +1,29 @@
 apply plugin: 'com.android.library'
-apply plugin: 'com.vanniktech.maven.publish' // NEW
+
+ext {
+    PUBLISH_GROUP_ID = 'io.gleap.okhttp_interceptor'
+    PUBLISH_VERSION = '1.0.0'
+    PUBLISH_ARTIFACT_ID = 'gleap-okhttp-interceptor'
+    PUBLISH_DESCRIPTION = 'OkHttp interceptor for Gleap Android SDK.'
+    PUBLISH_URL = 'https://github.com/GleapSDK/OKHttpInterceptor'
+    PUBLISH_LICENSE_NAME = 'MIT'
+    PUBLISH_LICENSE_URL = 'https://github.com/GleapSDK/Android-SDK/blob/master/LICENSE.md'
+    PUBLISH_DEVELOPER_ID = 'mondbaer'
+    PUBLISH_DEVELOPER_NAME = 'Niklas Fessler'
+    PUBLISH_DEVELOPER_EMAIL = 'niklas@boehlerbrothers.com'
+    PUBLISH_SCM_CONNECTION =
+            'scm:git@github.com:GleapSDK/OKHttpInterceptor.git'
+    PUBLISH_SCM_DEVELOPER_CONNECTION =
+            'scm:git@github.com:GleapSDK/OKHttpInterceptor.git'
+    PUBLISH_SCM_URL =
+            'https://github.com/GleapSDK/OKHttpInterceptor'
+}
+
+apply from: "${rootProject.projectDir}/scripts/publish-module.gradle"
 
 buildscript {
     repositories {
         google()
-        mavenCentral() // NEW
     }
 
 }
@@ -42,5 +61,5 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
     implementation "com.squareup.okhttp3:okhttp:4.9.0"
-    implementation group: 'io.gleap', name: 'gleap-android-sdk', version: '6.0.56'
+    implementation group: 'io.gleap', name: 'gleap-android-sdk', version: '6.1.0'
 }
