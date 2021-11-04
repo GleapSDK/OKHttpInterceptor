@@ -3,9 +3,8 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
-        jcenter() // Warning: this repository is going to shut down soon
     }
 }
 rootProject.name = "OkHttp-Interceptor"
 include ':app'
-include ':app:okhttp-interceptor'
+include ':okhttp-interceptor'

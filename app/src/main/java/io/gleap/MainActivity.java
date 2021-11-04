@@ -8,7 +8,6 @@ import android.view.View;
 
 import java.io.IOException;
 
-import io.gleap.okhttp_interceptor.GleapOkHttpInterceptor;
 import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.MediaType;

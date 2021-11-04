@@ -1,7 +1,8 @@
-apply plugin: 'com.android.library'
-
+plugins {
+    id 'com.android.library'
+}
 ext {
-    PUBLISH_GROUP_ID = 'io.gleap.okhttp_interceptor'
+    PUBLISH_GROUP_ID = 'io.github.gleapsdk'
     PUBLISH_VERSION = '1.0.0'
     PUBLISH_ARTIFACT_ID = 'gleap-okhttp-interceptor'
     PUBLISH_DESCRIPTION = 'OkHttp interceptor for Gleap Android SDK.'
@@ -11,22 +12,13 @@ ext {
     PUBLISH_DEVELOPER_ID = 'mondbaer'
     PUBLISH_DEVELOPER_NAME = 'Niklas Fessler'
     PUBLISH_DEVELOPER_EMAIL = 'niklas@boehlerbrothers.com'
-    PUBLISH_SCM_CONNECTION =
-            'scm:git@github.com:GleapSDK/OKHttpInterceptor.git'
-    PUBLISH_SCM_DEVELOPER_CONNECTION =
-            'scm:git@github.com:GleapSDK/OKHttpInterceptor.git'
-    PUBLISH_SCM_URL =
-            'https://github.com/GleapSDK/OKHttpInterceptor'
+    PUBLISH_SCM_CONNECTION = 'scm:git@github.com:GleapSDK/OKHttpInterceptor.git'
+    PUBLISH_SCM_DEVELOPER_CONNECTION = 'scm:git@github.com:GleapSDK/OKHttpInterceptor.git'
+    PUBLISH_SCM_URL = 'https://github.com/GleapSDK/OKHttpInterceptor'
 }
 
-apply from: "${rootProject.projectDir}/scripts/publish-module.gradle"
 
-buildscript {
-    repositories {
-        google()
-    }
 
-}
 
 android {
     compileSdk 30
@@ -35,9 +27,10 @@ android {
         minSdk 21
         targetSdk 30
         versionCode 1
-        versionName "0.0.1"
+        versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
     }
 
     buildTypes {
@@ -47,10 +40,22 @@ android {
         }
     }
 
-    compileOptions {
-        sourceCompatibility JavaVersion.VERSION_11
-        targetCompatibility JavaVersion.VERSION_11
+    nexusPublishing {
+        repositories {
+            sonatype {  //only for users registered in Sonatype after 24 Feb 2021
+                packageGroup="io.github.gleapsdk"
+                nexusUrl.set(uri("https://s01.oss.sonatype.org/service/local/"))
+                snapshotRepositoryUrl.set(uri("https://s01.oss.sonatype.org/content/repositories/snapshots/"))
+                username = "eSWrZzLB"
+                password = "n+7kc0pms8p2GWPIxK4txd4EdlQejovYZmHdLuOEwIUd"
+            }
+        }
     }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
 }
 
 dependencies {
@@ -60,6 +65,8 @@ dependencies {
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
-    implementation "com.squareup.okhttp3:okhttp:4.9.0"
+    implementation "com.squareup.okhttp3:okhttp:4.9.1"
     implementation group: 'io.gleap', name: 'gleap-android-sdk', version: '6.1.0'
 }
+
+apply from: "${rootProject.projectDir}/scripts/publish-module.gradle"

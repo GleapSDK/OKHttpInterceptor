@@ -1,4 +1,4 @@
-package io.gleap.okhttp_interceptor;
+package io.gleap;
 
 import androidx.annotation.NonNull;
 
@@ -7,18 +7,13 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
-import java.io.InputStream;
-import java.util.Date;
-
-import io.gleap.Gleap;
-import io.gleap.RequestType;
 import okhttp3.Headers;
 import okhttp3.Interceptor;
 import okhttp3.Request;
 import okhttp3.Response;
 import okio.Buffer;
 
-public class GleapOkHttpInterceptor implements Interceptor {
+public class GleapOkHttpInterceptor implements Interceptor  {
     @NonNull
     @Override
     public Response intercept(@NonNull Chain chain) throws IOException {
@@ -49,7 +44,7 @@ public class GleapOkHttpInterceptor implements Interceptor {
 
             }
             resquestObj.put("headers", headersReqObj);
-        } catch (Exception e) {
+        } catch (Exception ignored) {
 
         }
 
@@ -81,7 +76,7 @@ public class GleapOkHttpInterceptor implements Interceptor {
             }
             responseObj.put("headers", headersResObj);
             resquestObj.put("success", response.isSuccessful());
-        } catch (JSONException e) {
+        } catch (JSONException ignored) {
         }
         RequestType requestType = RequestType.GET;
         switch (request.method()) {
