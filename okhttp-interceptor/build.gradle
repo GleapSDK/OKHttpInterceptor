@@ -2,7 +2,7 @@ plugins {
     id 'com.android.library'
 }
 ext {
-    PUBLISH_GROUP_ID = 'io.github.gleapsdk'
+    PUBLISH_GROUP_ID = 'io.gleap'
     PUBLISH_VERSION = '1.0.0'
     PUBLISH_ARTIFACT_ID = 'gleap-okhttp-interceptor'
     PUBLISH_DESCRIPTION = 'OkHttp interceptor for Gleap Android SDK.'
@@ -43,7 +43,8 @@ android {
     nexusPublishing {
         repositories {
             sonatype {  //only for users registered in Sonatype after 24 Feb 2021
-                packageGroup="io.github.gleapsdk"
+                packageGroup="io.gleap"
+                repositoryDescription="OkHttp interceptor for Gleap Android SDK."
                 nexusUrl.set(uri("https://s01.oss.sonatype.org/service/local/"))
                 snapshotRepositoryUrl.set(uri("https://s01.oss.sonatype.org/content/repositories/snapshots/"))
                 username = "eSWrZzLB"
