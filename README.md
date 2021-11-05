@@ -33,7 +33,7 @@ Sync the gradle file to start the download of the library.
 
 docu to be done
 
-** Use the Interceptor **
+**Use the Interceptor**
 
 This is the example of okhttp for intercepting request with a small adaption.
 
