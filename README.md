@@ -29,9 +29,8 @@ implementation group: 'io.gleap', name: 'gleap-okhttp-interceptor', version: '1.
 
 ```
 
-Sync the gradle file to start the download of the library.
+Sync the gradle file to start the download of the library. 🎉
 
-docu to be done
 
 **Use the Interceptor**
 
