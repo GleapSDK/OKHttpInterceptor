@@ -1,11 +1,11 @@
 # Gleap Android OKHttpInterceptor
 
-![Gleap Android SDK Intro](https://raw.githubusercontent.com/GleapSDK/iOS-SDK/main/imgs/gleapheader.png)
+![Gleap Android SDK Intro](https://raw.githubusercontent.com/GleapSDK/Gleap-iOS-SDK/main/Resources/GleapHeaderImage.png)
 
-Intercept your okhttp requests on andoird. This library uses [OkHttp](https://square.github.io/okhttp/) and [GleapSDK](https://github.com/GleapSDK/Android-SDK).
+Capture HTTP request and response logs from [OkHttp](https://square.github.io/okhttp/) with the [Gleap Android SDK](https://github.com/GleapSDK/Android-SDK). Give your team network context for in-app bug reports and customer support.
 
 ## Docs & Examples
-Checkout our [documentation](https://docs.gleap.io/android/network-logs) for full reference.
+Checkout our [documentation](https://docs.gleap.ai/documentation/android/network-logs) for full reference.
 
 ## Installation with Maven
 
