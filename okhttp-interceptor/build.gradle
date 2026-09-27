@@ -40,18 +40,6 @@ android {
         }
     }
 
-    nexusPublishing {
-        repositories {
-            sonatype {  //only for users registered in Sonatype after 24 Feb 2021
-                packageGroup="io.gleap"
-                repositoryDescription="OkHttp interceptor for Gleap Android SDK."
-                nexusUrl.set(uri("https://s01.oss.sonatype.org/service/local/"))
-                snapshotRepositoryUrl.set(uri("https://s01.oss.sonatype.org/content/repositories/snapshots/"))
-                username = "eSWrZzLB"
-                password = "n+7kc0pms8p2GWPIxK4txd4EdlQejovYZmHdLuOEwIUd"
-            }
-        }
-    }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
