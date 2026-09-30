@@ -1,7 +1,7 @@
 # Gleap Android OKHttpInterceptor
 
 > [!IMPORTANT]
-> **Deprecated.** The [Gleap Android SDK](https://github.com/GleapSDK/Android-SDK) includes `io.gleap.GleapOkHttpInterceptor` since version 18.2.0. Remove the `io.gleap:gleap-okhttp-interceptor` dependency and keep your code as it is: the class name, the import and `addInterceptor(new GleapOkHttpInterceptor())` stay the same (keeping both dependencies fails the build with a duplicate class error).
+> **Deprecated.** The [Gleap Android SDK](https://github.com/GleapSDK/Android-SDK) includes `io.gleap.GleapOkHttpInterceptor` since version 19.0.0. Remove the `io.gleap:gleap-okhttp-interceptor` dependency and keep your code as it is: the class name, the import and `addInterceptor(new GleapOkHttpInterceptor())` stay the same. If the dependency is still declared, the Android SDK upgrades it to its empty 19.0.0 release, so the build keeps working.
 >
 > The built-in interceptor logs request and response headers and text bodies (JSON, XML, text and forms, up to 150 KB each), copies the response body while your app reads it so nothing is consumed or delayed (streaming responses pass through untouched), logs failed requests with their error, and applies the network log filters from the dashboard. Versions up to 7.4.2 of this artifact dropped the headers and body of JSON requests, kept only 2 KB of each response and did not log failed requests.
 
